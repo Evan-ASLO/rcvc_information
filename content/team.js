@@ -31,7 +31,7 @@ window.RCVC_TEAM = [
       {
         title: "Venture Principals",
         members: [
-          { name: "Alicia Lung", role: "Venture Principal", linkedin: "", placeholder: true }
+          { name: "Alicia Lung", role: "Venture Principal", linkedin: "" }
         ]
       },
       {

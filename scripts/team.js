@@ -14,13 +14,17 @@ const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, character =>
 })[character]);
 
 let globalIndex = 0;
+const isVacantRole = member =>
+  member.placeholder === true && member.name.trim().toLowerCase() === "to be announced";
+
 $("#teamNavLinks").innerHTML = teams.map(team =>
   `<a href="#${escapeHtml(team.id)}">${escapeHtml(team.title)}</a>`
 ).join("");
 
 const memberCard = member => {
   globalIndex += 1;
-  const initials = member.placeholder
+  const vacancy = isVacantRole(member);
+  const initials = vacancy
     ? "RC"
     : member.name
       .split(/\s+/)
@@ -36,10 +40,10 @@ const memberCard = member => {
     : "";
 
   return `
-    <${tag} class="member-card ${member.placeholder ? "placeholder vacancy" : ""} ${linkedIn ? "" : "disabled"}" ${linkAttributes}>
+    <${tag} class="member-card ${vacancy ? "placeholder vacancy" : ""} ${linkedIn ? "" : "disabled"}" ${linkAttributes}>
       <div class="member-top">
         <span class="member-number">${String(globalIndex).padStart(2, "0")}</span>
-        <span class="linkedin-pill">${linkedIn ? "in View profile ↗" : member.placeholder ? "Open roster slot" : "LinkedIn hidden"}</span>
+        <span class="linkedin-pill">${linkedIn ? "in View profile ↗" : vacancy ? "Open roster slot" : "LinkedIn hidden"}</span>
       </div>
       <div class="member-bottom">
         <span class="avatar">${escapeHtml(initials)}</span>
@@ -73,7 +77,7 @@ $("#teamSections").innerHTML = teams.map(team => `
 const actualMemberCount = teams
   .flatMap(team => team.roles)
   .flatMap(role => role.members)
-  .filter(member => !member.placeholder)
+  .filter(member => !isVacantRole(member))
   .length;
 $("#memberCount").textContent = String(actualMemberCount).padStart(2, "0");
 

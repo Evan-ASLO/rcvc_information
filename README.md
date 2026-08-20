@@ -31,6 +31,7 @@ Use one of these categories so the filters continue to work: `markets`, `diligen
 2. Find the person's current team and role.
 3. Update `name`, `role`, or `linkedin`.
 4. Use the full LinkedIn URL. Leave `linkedin` empty to keep the profile private.
+5. If filling a vacancy, remove `placeholder: true` from that record.
 
 For a vacant role, use:
 
