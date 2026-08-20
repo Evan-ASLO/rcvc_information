@@ -31,13 +31,12 @@ window.RCVC_TEAM = [
       {
         title: "Venture Principals",
         members: [
-          { name: "To be announced", role: "Venture Principal", linkedin: "", placeholder: true }
+          { name: "Alicia Lung", role: "Venture Principal", linkedin: "", placeholder: true }
         ]
       },
       {
         title: "Venture Associates",
         members: [
-          { name: "Alicia Lung", role: "Venture Associate", linkedin: "" },
           { name: "Nicole Ahn", role: "Venture Associate", linkedin: "" },
           { name: "Jackson Gannett", role: "Venture Associate", linkedin: "" },
           { name: "Jacob Guyatt", role: "Venture Associate", linkedin: "" },
