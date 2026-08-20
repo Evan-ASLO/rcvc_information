@@ -10,7 +10,7 @@ window.RCVC_TEAM = [
         title: "Executive Leadership",
         members: [
           { name: "Malia Chan", role: "President", linkedin: "" },
-          { name: "Evan Aston Lowe", role: "Vice President", linkedin: "" }
+          { name: "Evan Aston Lowe", role: "Vice President", linkedin: "https://www.linkedin.com/in/evanastonlowe/" }
         ]
       }
     ]
