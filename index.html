@@ -96,9 +96,15 @@
   <main id="main">
     <section class="cinematic-intro" aria-label="RCVC introduction">
       <video class="intro-video" id="introVideo" src="assets/intro.mp4" autoplay muted playsinline loop preload="auto"></video>
+      <canvas class="intro-scene" id="ventureScene" aria-hidden="true"></canvas>
+      <div class="intro-signal-legend" aria-hidden="true">
+        <span class="signal-status"><i></i> Live venture signals</span>
+        <span class="signal-instruction">Move to reveal hidden opportunities</span>
+      </div>
       <div class="intro-copy">
         <span class="intro-kicker">Rotman Commerce Venture Capital</span>
         <p class="intro-title">See the future.<br><em>Back the bold.</em></p>
+        <span class="intro-reveal-hint">Explore the signal field</span>
       </div>
       <div class="intro-bottom">
         <span class="intro-scroll"><i></i> Scroll to enter RCVC</span>
@@ -291,5 +297,6 @@
   <script src="content/home.js"></script>
   <script src="scripts/site.js"></script>
   <script src="scripts/main.js"></script>
+  <script type="module" src="scripts/venture-scene.js"></script>
 </body>
 </html>
