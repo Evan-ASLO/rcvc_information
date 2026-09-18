@@ -59,6 +59,6 @@ who-we-are.html     Team page
 events.html         Events page
 ```
 
-The interactive opening scene is isolated in `scripts/venture-scene.js`. It uses a pinned Three.js module from jsDelivr and reads its colours from the site's existing theme variables. Routine research, partner, event, and team updates do not require editing this file.
+The interactive Deal Flow Galaxy is isolated in `scripts/venture-scene.js`. It uses a pinned Three.js module from jsDelivr and reads its colours from the site's existing theme variables. Routine research, partner, event, and team updates do not require editing this file.
 
 `rcvc-website.html` is retained only as a redirect for old links. New links should use `index.html`.
