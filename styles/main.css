@@ -56,9 +56,7 @@
       min-height: 100svh;
       overflow: hidden;
       background: var(--cp-text);
-      isolation: isolate;
     }
-    html[data-theme="dark"] .cinematic-intro { background: var(--cp-surface); }
     .cinematic-intro::after {
       content: "";
       position: absolute;
@@ -75,132 +73,10 @@
       object-fit: cover;
       transform: scale(1.04);
       background: var(--cp-text);
-      filter: grayscale(.35) saturate(.55) contrast(1.12) brightness(.68);
-      opacity: .3;
     }
-    html[data-theme="dark"] .intro-video { background: var(--cp-surface); }
-    .intro-scene {
-      position: absolute;
-      z-index: 1;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 1.1s ease;
-    }
-    .cinematic-intro.scene-ready .intro-scene { opacity: 1; }
-    .intro-signal-legend {
-      position: absolute;
-      z-index: 4;
-      top: 92px;
-      right: max(24px, calc((100vw - 1180px) / 2));
-      display: grid;
-      justify-items: end;
-      gap: 7px;
-      color: var(--cp-border);
-      font-family: Consolas, "Courier New", Courier, monospace;
-      font-size: 9px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    html[data-theme="dark"] .intro-signal-legend { color: var(--cp-text-muted); }
-    .signal-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--cp-accent);
-    }
-    .signal-status i {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--cp-accent);
-      box-shadow: 0 0 0 7px var(--cp-accent-soft);
-      animation: signalPulse 2.4s ease-in-out infinite;
-    }
-    @keyframes signalPulse {
-      50% { transform: scale(.72); opacity: .55; }
-    }
-    .stage-key {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 7px 14px;
-      max-width: 410px;
-      padding-top: 4px;
-      border-top: 1px solid var(--cp-border-strong);
-    }
-    .stage-key span { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
-    .stage-key b {
-      color: var(--cp-accent);
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 1;
-    }
-    .deal-scanner {
-      position: absolute;
-      z-index: 3;
-      left: 50%;
-      top: 50%;
-      width: min(360px, 42vw);
-      aspect-ratio: 1;
-      border: 1px solid var(--cp-accent);
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--cp-accent-soft), transparent 66%);
-      box-shadow: inset 0 0 0 1px var(--cp-accent-soft);
-      opacity: 0;
-      pointer-events: none;
-      transform: translate(-50%, -50%) scale(.88);
-      transition: opacity .2s ease, transform .28s ease;
-    }
-    .deal-scanner.active {
-      opacity: .74;
-      transform: translate(-50%, -50%) scale(1);
-    }
-    .deal-scanner::before,
-    .deal-scanner::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      background: var(--cp-accent);
-      transform: translate(-50%, -50%);
-    }
-    .deal-scanner::before { width: 22px; height: 1px; }
-    .deal-scanner::after { width: 1px; height: 22px; }
-    .scanner-crosshair {
-      position: absolute;
-      inset: 12%;
-      border: 1px dashed var(--cp-accent);
-      border-radius: 50%;
-      opacity: .22;
-    }
-    .scanner-readout {
-      position: absolute;
-      left: 50%;
-      top: calc(100% + 12px);
-      min-width: 180px;
-      display: grid;
-      gap: 3px;
-      padding: 8px 10px;
-      border: 1px solid var(--cp-border-strong);
-      border-radius: .625rem;
-      background: var(--cp-panel-strong);
-      color: var(--cp-text);
-      font-family: Consolas, "Courier New", Courier, monospace;
-      font-size: 9px;
-      letter-spacing: .1em;
-      text-align: center;
-      text-transform: uppercase;
-      transform: translateX(-50%);
-      backdrop-filter: blur(10px);
-    }
-    .scanner-readout span { color: var(--cp-accent); }
-    .scanner-readout strong { font-size: 9px; font-weight: 500; }
     .intro-copy {
       position: absolute;
-      z-index: 4;
+      z-index: 3;
       left: max(24px, calc((100vw - 1180px) / 2));
       bottom: 92px;
       width: min(680px, calc(100% - 48px));
@@ -221,33 +97,13 @@
     .intro-title {
       max-width: 650px;
       margin: 0;
-      color: var(--cp-surface);
+      color: var(--cp-text);
       font-size: clamp(48px, 7vw, 96px);
       font-weight: 550;
       letter-spacing: -.065em;
       line-height: .9;
     }
-    html[data-theme="dark"] .intro-title { color: var(--cp-text); }
     .intro-title em { color: var(--cp-accent); font-weight: 350; }
-    .intro-reveal-hint {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-top: 22px;
-      color: var(--cp-text-muted);
-      font-family: Consolas, "Courier New", Courier, monospace;
-      font-size: 9px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-    .intro-reveal-hint::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border: 1px solid var(--cp-accent);
-      border-radius: 50%;
-      box-shadow: 0 0 0 5px var(--cp-accent-soft);
-    }
     .intro-bottom {
       position: absolute;
       z-index: 4;
@@ -810,18 +666,6 @@
       .photo-slot, .photo-slot:first-child, .photo-slot:nth-child(2), .photo-slot:nth-child(3) { min-height: 320px; grid-column: span 6; grid-row: auto; }
     }
     @media (max-width: 620px) {
-      .intro-signal-legend {
-        top: 82px;
-        left: 24px;
-        right: 24px;
-        justify-items: start;
-      }
-      .signal-instruction { display: none; }
-      .stage-key { justify-content: flex-start; max-width: 300px; }
-      .stage-key span { font-size: 8px; }
-      .intro-video { opacity: .24; }
-      .intro-copy { bottom: 104px; }
-      .intro-reveal-hint { display: none; }
       h1 { font-size: clamp(58px, 18vw, 78px); line-height: .84; }
       .thesis-hero h1 { font-size: clamp(54px, 16vw, 72px); }
       .thesis-logo { width: 64px; height: 64px; }
@@ -841,8 +685,4 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
       .cursor { display: none; }
-      .signal-instruction, .intro-reveal-hint { display: none; }
-    }
-    @media (hover: none), (pointer: coarse) {
-      .deal-scanner { display: none; }
     }
